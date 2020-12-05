@@ -1,6 +1,14 @@
+local usage = [[
+Usage: mine [tunnelHeight] [branchLength]
+]]
 -- Config
 local branchLength = 30
 local tunnelHeight = 7
+
+-- Handle arguments
+local opts, args = utils.parseArgs{...}
+tunnelHeight = tonumber(args[1] or tunnelHeight)
+branchLength = tonumber(args[2] or branchLength)
 
 function isOre( bool, data )
 	return data.tags and data.tags["forge:ores"]
