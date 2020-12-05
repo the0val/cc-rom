@@ -4,7 +4,7 @@ Usage: tunner <width> <height> [length]
 
 local opts, args = utils.parseArgs{ ...  }
 
-local width, height, length = args[1], args[2], args[3]
+local width, height, length = tonumber(args[1]), tonumber(args[2]), tonumber(args[3])
 
 if height == nil then
 	print(usage)
@@ -19,7 +19,7 @@ m.forward()
 turtle.turnRight()
 
 local l = 1
-while l < length do
+while l <= length do
 	for w = 1, width do
 		if w ~= 1 then
 			m.forward()
