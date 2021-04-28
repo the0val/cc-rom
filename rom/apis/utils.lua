@@ -16,3 +16,13 @@ function parseArgs( args )
 	end
 	return options, arguments
 end
+
+function printError( message )
+	if term.setTextColor then
+		term.SetTextColor(colors.red)
+	end
+	print("Error:\n", message)
+	if term.setTextColor then
+		term.SetTextColor(colors.white)
+	end
+end
