@@ -2,18 +2,18 @@
 	Flattens an area of the given dimensions
 	height (default up) width (default left) length (default forward)
 	Width is counted to the left from the turtle
-	
+
 	**Options**
 	-u : (default) Will dig upwards. Opposite of -d
 	-d : Will dig down. Opposite of -u
-	
+
 	-l : (default) Will dig to the left. Opposite of -r
 	-r : Will dig to the right. Opposite of -l
 ]]
 
 -- Handle command line arguments --
 
-os.loadAPI"utils.lua"
+utils = require"utils"
 local opts, args = utils.parseArgs({...})
 local height = tonumber(args[1])
 local width = tonumber(args[2])

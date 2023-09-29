@@ -1,4 +1,5 @@
-function parseArgs( args )
+local utils = {}
+function utils.parseArgs( args )
 	local options = {}
 	local arguments = {}
 	for _, word in ipairs(args) do
@@ -17,7 +18,7 @@ function parseArgs( args )
 	return options, arguments
 end
 
-function printError( message )
+function utils.printError( message )
 	if term.setTextColor then
 		term.SetTextColor(colors.red)
 	end
@@ -26,3 +27,5 @@ function printError( message )
 		term.SetTextColor(colors.white)
 	end
 end
+
+return utils
